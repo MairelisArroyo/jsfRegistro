@@ -1,0 +1,89 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:jsf="http://xmlns.jcp.org/jsf">
+    
+    
+    <h:head>
+        <style type="text/css" media="screen">
+            @import 'estilo/style.css';
+        </style>
+       
+        <title jsf:id="title">${mensajes['modulo']} - ${mensajes['tituloDeCabecera']}</title>    
+    </h:head>
+    
+    <h:body>
+        <div class="head">
+            <h1 jsf:id="head">${mensajes['tituloBody']}</h1>
+        </div>     
+        
+        <h:form id="form1">
+            <p>
+                <h:message for="nombreUsuario" styleClass="error" />&nbsp;
+                <h:message for="titulacion" styleClass="error" />&nbsp;
+                <h:message for="anioGraduacion" styleClass="error" />&nbsp;
+                <h:message for="fechaNacimiento" styleClass="error" /> 
+            </p>
+            <br />
+            
+            <div class="Container">
+                <div class="listaIzq">
+                    <div class="Item">
+                        <h:outputLabel for="nombreUsuario">${mensajes['nombreUsuarioLabel']}:</h:outputLabel> 
+                    </div>
+                  
+                    <div class="Item">
+                        <h:outputLabel for="titulacion">${mensajes['titulacionLabel']}:</h:outputLabel>
+                    </div>
+                    
+                    <div class="Item">
+                        <h:outputLabel for="anioGraduacion">${mensajes['AnioDeGraduacionLabel']}:</h:outputLabel> 
+                    </div>
+                    
+                    <div class="Item">
+                        <h:outputLabel for="fechaNacimiento">${mensajes['fechaNacimientoLabel']}:</h:outputLabel> 
+                    </div>
+                </div>
+                
+                <div class="listaDer">
+                    <div class="Item">
+                        <h:inputText id="nombreUsuario" value="#{beanRegistroUsuario.nombreUsuario}" label="${mensajes['nombreUsuarioLabel']}" required="true">
+                            <f:validateLength minimum="8" />
+                        </h:inputText>
+                    </div>
+                    <div class="Item">
+                        <h:inputText id="titulacion" value="#{beanRegistroUsuario.titulacion}" label="${mensajes['titulacionLabel']}" required="true" >
+                        </h:inputText>
+                    </div>
+                    <div class="Item">
+                        <h:inputText id="anioGraduacion" value="#{beanRegistroUsuario.fechaGraduacion}" label="${mensajes['AnioDeGraduacionLabel']}" >
+                            <f:convertNumber integerOnly="true" type="number" />
+                            <f:validateLongRange minimum="1900" maximum="2016" />
+                        </h:inputText>
+                    </div>
+                    <div class="Item">
+                        <h:inputText id="fechaNacimiento" value="#{beanRegistroUsuario.fechaNacimiento}" label="${mensajes['fechaNacimientoLabel']}" required="true" >
+                            <f:convertDateTime type="date" pattern="dd-MMM-yyyy" />
+                        </h:inputText>
+                    </div>
+                </div> 
+            </div>  
+            <div>
+                <h:commandButton  value="${mensajes['enviarButton']}" class="boton" action="usuarioRegistrado.xhtml"></h:commandButton> 
+            </div>
+        </h:form>  
+    </h:body>
+</html>
+
+
+<!--Formulario de entrada que pida nombre, titulacion, ano de graduacion, fecha de nacimiento.
+
+Validar que se cumplimenten el nombre y titulacion.
+El nombre tenga una longitud minima de 8 caracteres.
+el ano sea entero y su valor se encuentre entre 1900 y 2016. distinguir entre los dos errores
+
+Personalizar los mensajes de error. Mostrar los mensajes error sobre la pagina de login en color naranja.
+Si la validacion es correcta mostrar en la pagina los datos introducidos.
+Poner todos los mensajes en el fichero propiedades.-->

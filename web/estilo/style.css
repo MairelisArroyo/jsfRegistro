@@ -1,0 +1,81 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Author     : Mairelis Arroyo
+*/
+
+body
+{
+    margin:0;
+    padding:0;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    font-family: sans-serif;
+    font-size: 1em;  
+}
+.head{
+    background-color: #F8F8FF;
+    color: #E9967A;
+    clear: left;
+    text-align: center;
+    background-position: top;
+    padding: 0.2em;
+    text-align: center;
+        
+}
+.boton{
+    float:bottom;
+    border: 2px solid #333;
+    border-radius: 5px;
+    background: none;
+    cursor: pointer;
+    width: 100px;
+    height: 2em;
+    font: bold .8em sans-serif;
+}
+.error
+{
+   background-color: #F8F8FF;
+   color: darkorange;
+   font-style: oblique;
+   font-size: 1.4em;
+   border: 2px solid grey;
+}
+
+.listaIzq
+{
+    display: flex;
+    flex-direction: column; 
+    padding: 1em;
+    text-align: right;
+}
+.listaDer
+{
+    display: flex;
+    flex-direction: column; 
+    padding: 1em;
+    text-align: left;
+}
+.Container
+{
+    width: 100%;
+    height: 100%;   
+    display: flex;
+    margin: auto;
+    padding: 1em;
+    display: inline-flex;
+    flex-direction: row;
+    border-left: .1em solid grey;
+    border-right: .1em solid grey;
+    border-style: double;
+    
+}
+
+.Item
+{
+    padding: 10px 15px;
+}

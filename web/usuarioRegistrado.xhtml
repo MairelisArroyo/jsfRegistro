@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:jsf="http://xmlns.jcp.org/jsf">
+    <head>
+        
+        <style type="text/css" media="screen">
+            @import 'estilo/style.css';
+        </style>
+        <title jsf:id="title">${mensajes['modulo']} - ${mensajes['tituloDeCabecera']}</title> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body>
+        
+        <div>
+            <h1 class="head" jsf:id="head">${mensajes['tituloDeCabeceraRegistro']}</h1>
+        </div>
+        
+        
+        <div class="Container">
+            <div class="lista">
+                <div class="Item">
+                    <h:outputText value="${mensajes['nombreUsuarioLabel']}:" />
+                </div>
+                <div class="Item">
+                    <h:outputText value="${mensajes['titulacionLabel']}:" />
+                </div>
+                <div class="Item">
+                    <h:outputText value="${mensajes['AnioDeGraduacionLabel']}:" />
+                </div>
+                <div class="Item">
+                    <h:outputText value="${mensajes['fechaNacimientoLabel']}:" />
+                </div>
+            </div>
+
+            <div class="lista">
+                <div class="Item">
+                    <h:outputText value="#{beanRegistroUsuario.nombreUsuario}" />
+                </div>
+                <div class="Item">
+                    <h:outputText value="#{beanRegistroUsuario.titulacion}" />
+                </div>
+                <div class="Item">
+                    <h:outputText value="#{beanRegistroUsuario.fechaGraduacion}" />
+                </div>
+                <div class="Item">
+                    <h:outputText value="#{beanRegistroUsuario.fechaNacimiento}" />
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
